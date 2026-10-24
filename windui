@@ -5824,11 +5824,10 @@ ab("Frame",{
 BackgroundTransparency=1,
 AutomaticSize=ah.Justify=="Between"and"Y"or"XY",
 Size=UDim2.new(
-ah.Justify=="Between"and 1 or 0,
-ah.Justify=="Between"and(ap and-an-ah.UIPadding or-an)
-or 0,
-1,
-0
+    ah.Justify=="Between" and 1 or 0,
+    typeof(ap) == "number" and typeof(an) == "number" and typeof(ah.UIPadding) == "number" and (ah.Justify=="Between" and (ap - an - ah.UIPadding) or -an) or 0,
+    1,
+    0
 ),
 Name="TitleFrame",
 },{
